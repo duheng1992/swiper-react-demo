@@ -1,0 +1,69 @@
+.swiper-container {
+	position: relative;
+	width: 100%;
+	transition: var(--bannerBackgroundTransition);
+	background-color: var(--bannerBackgroundColor);
+}
+
+.banner-item {
+	background: no-repeat center;
+	background-position: right 20% bottom 45%;
+	text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+	.banner-item {
+		height: calc(100vh);
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	.banner-item {
+		height: 800px;
+	}
+}
+
+.banner-show {
+	width: 40%;
+	padding-left: 100px;
+	padding-top: 300px;
+	color: #fff;
+}
+.banner-show h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	font-family: inherit;
+	font-weight: 400;
+	line-height: 1.4;
+	color: inherit;
+	text-align: left;
+}
+
+.banner-desc {
+	font-weight: normal;
+	color: #f8f9f9;
+	margin-top: 30px;
+	text-align: left;
+}
+
+.banner-free-use {
+	float: left;
+	width: 160px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	border-radius: 4px;
+	background-color: #006cff;
+	color: #f8f8f9;
+	font-size: 16px;
+	font-weight: 500;
+	margin-top: 40px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.banner-free-use:hover {
+	-box-shadow: 0 5px 8px -4px #5c76e8, inset 0 -3px 0 0 rgba(0, 0, 0, 0.12),
+		inset 0 1px 0 0 rgba(0, 0, 0, 0.12);
+	opacity: 1;
+}

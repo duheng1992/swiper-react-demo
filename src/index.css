@@ -1,0 +1,80 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* 存放全局样式，用于js动态修改 */
+:root {
+	--bannerBackgroundColor: #3860f4;
+	--bannerBackgroundTransition: none;
+	/* 轮播图定时器开关 */
+	--bannerAnimationName: progress;
+	--bannerAnimationDuration: 12s;
+}
+
+/* 轮播图分页指示器 */
+.custom-swiper-container {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.custom-swiper-container > span {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 4px;
+	border-radius: 0px;
+	margin-right: 8px;
+	background-color: #2c4dc6;
+}
+
+.custom-swiper-container .custom-swiper::before {
+	width: 0;
+	height: 0px;
+	top: 0;
+	left: 0;
+	content: '';
+	position: absolute;
+	height: 4px;
+}
+
+.custom-swiper.current::before {
+	background-color: #f8f8f9;
+	border-radius: 0px;
+	/* 间隔10s + 过渡动画2s，过渡时间写在这里，每次active都清零 */
+	-o-animation-name: var(--bannerAnimationName);
+	-moz-animation-name: var(--bannerAnimationName);
+	-webkit-animation-name: var(--bannerAnimationName);
+	animation-name: var(--bannerAnimationName);
+	-o-animation-duration: var(--bannerAnimationDuration);
+	-moz-animation-duration: var(--bannerAnimationDuration);
+	-webkit-animation-duration: var(--bannerAnimationDuration);
+	animation-duration: var(--bannerAnimationDuration);
+	/* animation-play-state: var(--bannerSwitch) */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+	color: #fff;
+	transform: scale(1.2);
+}
+
+.swiper-button-next {
+	right: 30px !important;
+}
+
+.swiper-button-prev {
+	left: 30px !important;
+}
+
+@keyframes progress {
+	from {
+		width: 0;
+	}
+	to {
+		width: 80px;
+	}
+}
